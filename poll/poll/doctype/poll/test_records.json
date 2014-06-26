@@ -1,0 +1,22 @@
+[
+	{
+		"doctype": "Poll",
+		"title": "_Test Poll",
+		"description": "Test poll description",
+		"poll_options": [
+			{"option": "Option 1"},
+			{"option": "Option 2"},
+			{"option": "Option 3"}
+		]
+	},
+	{
+		"doctype": "Poll",
+		"title": "_Test Poll 1",
+		"description": "Test poll description",
+		"poll_options": [
+			{"option": "Option 1-1"},
+			{"option": "Option 1-2"},
+			{"option": "Option 1-3"}
+		]
+	}
+]

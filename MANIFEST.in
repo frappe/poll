@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include poll *.css
+recursive-include poll *.csv
+recursive-include poll *.html
+recursive-include poll *.ico
+recursive-include poll *.js
+recursive-include poll *.json
+recursive-include poll *.md
+recursive-include poll *.png
+recursive-include poll *.py
+recursive-include poll *.svg
+recursive-include poll *.txt
+recursive-exclude poll *.pyc

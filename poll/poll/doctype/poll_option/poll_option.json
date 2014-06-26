@@ -1,0 +1,40 @@
+{
+ "creation": "2014-06-26 14:50:58.153194", 
+ "docstatus": 0, 
+ "doctype": "DocType", 
+ "document_type": "", 
+ "fields": [
+  {
+   "fieldname": "option", 
+   "fieldtype": "Text", 
+   "in_list_view": 1, 
+   "label": "Option", 
+   "permlevel": 0, 
+   "reqd": 1
+  }, 
+  {
+   "fieldname": "description", 
+   "fieldtype": "Text", 
+   "label": "Description", 
+   "permlevel": 0
+  }, 
+  {
+   "fieldname": "votes", 
+   "fieldtype": "Int", 
+   "in_list_view": 1, 
+   "label": "Votes", 
+   "permlevel": 0, 
+   "read_only": 1
+  }
+ ], 
+ "istable": 1, 
+ "modified": "2014-06-26 17:08:09.919302", 
+ "modified_by": "Administrator", 
+ "module": "Poll", 
+ "name": "Poll Option", 
+ "name_case": "", 
+ "owner": "Administrator", 
+ "permissions": [], 
+ "sort_field": "modified", 
+ "sort_order": "DESC"
+}

@@ -1,0 +1,50 @@
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<p class="lead">{{ description }}</p>
+
+<ul class="list-group">
+{% for option in sorted_options %}
+	<li class="list-group-item" style="padding-top: 20px; padding-bottom: 20px;">
+		<div class="row">
+			<div class="col-sm-10">
+				<strong>{{ option.option }}</strong>
+				{% if option.description -%}
+					<p class="text-muted small">{{ option.description }}</p>{% endif %}
+			</div>
+			<div class="col-sm-2">
+				<button class="btn btn-info pull-right btn-vote" style="margin-top: -7px;"
+					data-option-name="{{ option.name }}">Vote</button>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="progress" style="margin-top: 10px; height: 10px;">
+			<div class="progress-bar" style="width: {{ option.votes * 100 / maxvotes }}%"></div>
+		</div>
+	</li>
+{% endfor %}
+</ul>
+
+<script>
+$(".btn-vote").on("click", function() {
+	$.ajax({
+		method: "POST",
+		url:"/api/method/poll.poll.doctype.poll.poll.add_vote",
+		data: {
+			option_name: $(this).attr("data-option-name")
+		},
+		statusCode: {
+			200: function(data) {
+				frappe.msgprint(data.message);
+			},
+			500: function(data) {
+				console.log(data.responseJSON.exc);
+			},
+			417: function(data) {
+				console.log(data.responseJSON.exc);
+			}
+		}
+	});
+})
+</script>
+{% endblock %}
