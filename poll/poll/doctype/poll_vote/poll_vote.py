@@ -13,15 +13,14 @@ import datetime
 
 class PollVote(Document):
 	def validate(self):
-		global duplicate, status
-		self.ip = frappe.get_request_header('REMOTE_ADDR', '127.0.0.2')
+		self.ip = frappe.get_request_header('REMOTE_ADDR', '127.0.0.1')
 		duplicate = frappe.db.get_value("Poll Vote", {"ip": self.ip, "poll": self.poll})
 		status = frappe.db.get_value("Poll", {"name": self.name}, "poll_status")
 
 		if duplicate:
 			raise DuplicateVoteError
 		
-		if status == "Inactive"
+		if status == "Inactive":
 			raise InactivePollStatusError
 
 	def on_update(self):
