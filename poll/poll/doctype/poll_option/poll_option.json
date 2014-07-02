@@ -27,8 +27,9 @@
    "read_only": 1
   }
  ], 
+ "icon": "", 
  "istable": 1, 
- "modified": "2014-06-26 17:08:09.919302", 
+ "modified": "2014-07-01 14:19:20.543854", 
  "modified_by": "Administrator", 
  "module": "Poll", 
  "name": "Poll Option", 
