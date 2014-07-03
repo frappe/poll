@@ -8,12 +8,10 @@ from frappe.model.document import Document
 from poll.poll.doctype.poll.poll import DuplicateVoteError
 from poll.poll.doctype.poll.poll import InactivePollStatusError
 
-import time
-import datetime
-
 class PollVote(Document):
 	def validate(self):
-		self.ip = frappe.get_request_header('REMOTE_ADDR', '127.0.0.1')
+		self.ip = frappe.get_request_header('REMOTE_ADDR', None) or \
+			frappe.get_request_header('X-Forwarded-For') or '127.0.0.1'
 		duplicate = frappe.db.get_value("Poll Vote", {"ip": self.ip, "poll": self.poll})
 		status = frappe.db.get_value("Poll", {"name": self.name}, "poll_status")
 
