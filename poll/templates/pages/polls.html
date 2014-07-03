@@ -1,7 +1,7 @@
 {% block header %}Polls Dashboard{% endblock %}
 
 {% block content %}
-<p class="lead">{{ (std_header) if std_header }}</p>
+{% if std_header %}<p class="lead">{{ std_header }}</p>{% endif %}
 <div class="tabbable"> <!-- Only required for left/right tabs -->
     <ul class="nav nav-tabs">
         <li class="active"><a href="#activepolltab" data-toggle="tab">Active Polls</a></li>
@@ -43,6 +43,5 @@
         </div>
     </div>
 </div>
-
 {% endblock %}
-{% block footer %}{{ (std_footer) if std_footer else footer }}{% endblock %}
+{% block footer %}{{ std_footer or footer or "" }}{% endblock %}

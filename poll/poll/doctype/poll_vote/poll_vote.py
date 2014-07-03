@@ -19,7 +19,7 @@ class PollVote(Document):
 
 		if duplicate:
 			raise DuplicateVoteError
-		
+
 		if status == "Inactive":
 			raise InactivePollStatusError
 
