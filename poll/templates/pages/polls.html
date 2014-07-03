@@ -1,8 +1,9 @@
 {% block header %}Polls{% endblock %}
 
 {% block content %}
+<!-- no-sidebar -->
 {% if std_header %}<p class="lead">{{ std_header }}</p>{% endif %}
-<div class="tabbable"> <!-- Only required for left/right tabs -->
+<div class="tabbable" style="max-width: 600px;"> <!-- Only required for left/right tabs -->
     <ul class="nav nav-tabs">
         <li class="active"><a href="#activepolltab" data-toggle="tab">Active Polls</a></li>
         <li><a href="#inactivepolltab" data-toggle="tab">Inactive Polls</a></li>
