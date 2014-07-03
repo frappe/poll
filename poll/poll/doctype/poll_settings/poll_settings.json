@@ -1,0 +1,46 @@
+{
+ "autoname": "set.#####", 
+ "creation": "2014-06-30 14:08:00.162128", 
+ "docstatus": 0, 
+ "doctype": "DocType", 
+ "document_type": "", 
+ "fields": [
+  {
+   "fieldname": "standard_header", 
+   "fieldtype": "Text", 
+   "in_list_view": 1, 
+   "label": "Standard Header", 
+   "permlevel": 0
+  }, 
+  {
+   "fieldname": "standard_footer", 
+   "fieldtype": "Text", 
+   "in_list_view": 1, 
+   "label": "Standard Footer", 
+   "permlevel": 0
+  }
+ ], 
+ "icon": "icon-cogs", 
+ "issingle": 1, 
+ "modified": "2014-07-01 14:19:28.615988", 
+ "modified_by": "Administrator", 
+ "module": "Poll", 
+ "name": "Poll Settings", 
+ "name_case": "", 
+ "owner": "Administrator", 
+ "permissions": [
+  {
+   "create": 1, 
+   "delete": 1, 
+   "export": 0, 
+   "import": 0, 
+   "permlevel": 0, 
+   "read": 1, 
+   "report": 0, 
+   "role": "Website Manager", 
+   "write": 1
+  }
+ ], 
+ "sort_field": "modified", 
+ "sort_order": "DESC"
+}

@@ -1,6 +1,16 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
+<div class="page-breadcrumbs" data-html-block="breadcrumbs">
+{%- if breadcrumbs is defined -%}{{ breadcrumbs }}{%- endif -%}
+</div>
+
+{% if (status == "Inactive") %}
+<div class="alert alert-info">
+This Poll is Inactive. You cannot vote on this Poll
+</div>
+{% endif %}
+
 <p class="lead">{{ description }}</p>
 
 <ul class="list-group">
@@ -12,14 +22,18 @@
 				{% if option.description -%}
 					<p class="text-muted small">{{ option.description }}</p>{% endif %}
 			</div>
+			{% if (status == "Active") %}
 			<div class="col-sm-2">
 				<button class="btn btn-info pull-right btn-vote" style="margin-top: -7px;"
 					data-option-name="{{ option.name }}">Vote</button>
 			</div>
+			{% endif %}
+			
 		</div>
 		<div class="clearfix"></div>
 		<div class="progress" style="margin-top: 10px; height: 10px;">
-			<div class="progress-bar" style="width: {{ option.votes * 100 / maxvotes }}%"></div>
+			<div class="progress-bar" style="width: {{ ((option.votes or 0) * 100 / maxvotes) if maxvotes else 0 }}%">
+			</div>
 		</div>
 	</li>
 {% endfor %}

@@ -16,7 +16,19 @@
    "fieldname": "published", 
    "fieldtype": "Check", 
    "label": "Published", 
+   "options": "", 
    "permlevel": 0
+  }, 
+  {
+   "default": "Active", 
+   "fieldname": "poll_status", 
+   "fieldtype": "Select", 
+   "in_list_view": 0, 
+   "label": "Poll Status", 
+   "options": "Active\nInactive", 
+   "permlevel": 0, 
+   "reqd": 1, 
+   "search_index": 0
   }, 
   {
    "fieldname": "page_name", 
@@ -47,10 +59,18 @@
    "fieldtype": "Text", 
    "label": "Footer", 
    "permlevel": 0
+  }, 
+  {
+   "default": "polls", 
+   "fieldname": "parent_website_route", 
+   "fieldtype": "Read Only", 
+   "hidden": 1, 
+   "label": "Parent Website Route", 
+   "permlevel": 0
   }
  ], 
  "icon": "icon-bar-chart", 
- "modified": "2014-06-26 17:02:01.626308", 
+ "modified": "2014-07-01 13:25:35.545346", 
  "modified_by": "Administrator", 
  "module": "Poll", 
  "name": "Poll", 

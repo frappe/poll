@@ -1,0 +1,48 @@
+{% block header %}Polls Dashboard{% endblock %}
+
+{% block content %}
+<p class="lead">{{ (std_header) if std_header }}</p>
+<div class="tabbable"> <!-- Only required for left/right tabs -->
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#activepolltab" data-toggle="tab">Active Polls</a></li>
+        <li><a href="#inactivepolltab" data-toggle="tab">Inactive Polls</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="activepolltab">
+            <p>
+
+            <!--Active Polls list-->
+            <ul class="list-group">
+            {% for poll in listed_polls %}
+                {% if (poll.poll_status == "Active") %}
+                <li class="list-unstyled" style="padding-top: 10px; padding-bottom: 10px; padding-left: 20px;">
+                            <a href="/{{poll.parent_website_route}}/{{ poll.page_name }}"><strong>{{ poll.title }}</strong></a>
+                                <p class="text-muted small">{{ poll.description }}</p>
+                </li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+
+            </p>
+        </div>
+        <div class="tab-pane" id="inactivepolltab">
+            <p>
+
+            <!--Inactive Polls list-->
+            <ul class="list-group">
+            {% for poll in listed_polls %}
+                {% if (poll.poll_status == "Inactive") %}
+                <li class="list-unstyled" style="padding-top: 10px; padding-bottom: 10px; padding-left: 20px;">
+                            <a href="/{{poll.parent_website_route}}/{{ poll.page_name }}"><strong>{{ poll.title }}</strong></a>
+                                <p class="text-muted small">{{ poll.description }}</p>
+                </li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block footer %}{{ (std_footer) if std_footer else footer }}{% endblock %}
