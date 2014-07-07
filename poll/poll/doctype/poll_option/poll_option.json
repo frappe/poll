@@ -23,13 +23,23 @@
    "fieldtype": "Int", 
    "in_list_view": 1, 
    "label": "Votes", 
+   "no_copy": 1, 
+   "permlevel": 0, 
+   "read_only": 1
+  }, 
+  {
+   "fieldname": "previous_votes", 
+   "fieldtype": "Int", 
+   "in_list_view": 1, 
+   "label": "Previous Votes", 
+   "no_copy": 1, 
    "permlevel": 0, 
    "read_only": 1
   }
  ], 
  "icon": "", 
  "istable": 1, 
- "modified": "2014-07-01 14:19:20.543854", 
+ "modified": "2014-07-07 14:13:04.855958", 
  "modified_by": "Administrator", 
  "module": "Poll", 
  "name": "Poll Option", 

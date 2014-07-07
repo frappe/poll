@@ -9,6 +9,7 @@
    "fieldtype": "Data", 
    "in_list_view": 1, 
    "label": "Title", 
+   "no_copy": 1, 
    "permlevel": 0, 
    "reqd": 1
   }, 
@@ -25,6 +26,7 @@
    "fieldtype": "Select", 
    "in_list_view": 0, 
    "label": "Poll Status", 
+   "no_copy": 1, 
    "options": "Active\nInactive", 
    "permlevel": 0, 
    "reqd": 1, 
@@ -44,6 +46,7 @@
    "fieldtype": "Text", 
    "in_list_view": 1, 
    "label": "Description", 
+   "no_copy": 1, 
    "permlevel": 0, 
    "reqd": 1
   }, 
@@ -70,7 +73,7 @@
   }
  ], 
  "icon": "icon-bar-chart", 
- "modified": "2014-07-01 13:25:35.545346", 
+ "modified": "2014-07-07 14:11:27.794508", 
  "modified_by": "Administrator", 
  "module": "Poll", 
  "name": "Poll", 
