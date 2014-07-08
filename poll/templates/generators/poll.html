@@ -19,7 +19,7 @@ This Poll is Inactive. You cannot vote on this Poll
 	<li class="list-group-item" style="padding-top: 20px; padding-bottom: 20px;">
 		<div class="row">
 			<div class="col-sm-2 text-center">
-				<h3 style="margin: 0px;">{{ option.votes or 0 }}</h3>
+				<h3 style="margin: 0px;">{{ (option.votes or 0) + (option.previous_votes or 0) }}</h3>
 				<p class="text-muted small">{{ "Vote" if option.votes==1 else "Votes" }}</p>
 			</div>
 			<div class="col-sm-8">
