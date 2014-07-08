@@ -37,7 +37,7 @@ This Poll is Inactive. You cannot vote on this Poll
 		</div>
 		<div class="clearfix"></div>
 		<div class="progress" style="margin-top: 10px; height: 10px;">
-			<div class="progress-bar" style="width: {{ ((option.votes or 0) * 100 / maxvotes) if maxvotes else 0 }}%">
+			<div class="progress-bar" style="width: {{ (((option.votes or 0) + (option.previous_votes or 0)) * 100 / maxvotes) if maxvotes else 0 }}%">
 			</div>
 		</div>
 	</li>

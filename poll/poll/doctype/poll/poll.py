@@ -16,9 +16,9 @@ class InactivePollStatusError(frappe.ValidationError): pass
 
 class Poll(WebsiteGenerator):
 	def get_context(self, context):
-		context.maxvotes = max([d.votes for d in self.poll_options])
+		context.maxvotes = max([(d.previous_votes or 0) + (d.votes or 0) for d in self.poll_options])
 		context.sorted_options = sorted(self.poll_options,
-			key=lambda d: (d.votes, -d.idx), reverse=True)
+			key=lambda d: ((d.previous_votes or 0) + (d.votes or 0), -d.idx), reverse=True)
 		context.status = frappe.db.get_value("Poll", {"name": self.name}, fieldname = "poll_status")
 		context.parents = [{'name': self.parent_website_route, 'title': 'Polls'}]
 		return context
