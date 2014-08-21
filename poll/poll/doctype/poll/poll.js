@@ -15,7 +15,7 @@ frappe.ui.form.on("Poll", "refresh", function (frm) {
 					return false;
 				}
 			});
-		});
+		}, null, "btn-default");
 		frappe.set_route("Form", "Poll", new_doc.name);
 	}, "icon-copy");
 });

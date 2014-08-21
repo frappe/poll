@@ -5,16 +5,15 @@ from __future__ import unicode_literals
 import frappe
 from frappe.website.website_generator import WebsiteGenerator
 
-template = "templates/generators/poll.html"
-condition_field = "published"
-no_cache = 1
-no_sitemap = 1
-
 class DuplicateVoteError(frappe.ValidationError): pass
 
 class InactivePollStatusError(frappe.ValidationError): pass
 
 class Poll(WebsiteGenerator):
+	template = "templates/generators/poll.html"
+	condition_field = "published"
+	no_cache = 1
+	no_sitemap = 1
 	def get_context(self, context):
 		context.maxvotes = max([(d.previous_votes or 0) + (d.votes or 0) for d in self.poll_options])
 		context.sorted_options = sorted(self.poll_options,
