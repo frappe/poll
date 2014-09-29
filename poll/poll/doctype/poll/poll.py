@@ -12,6 +12,7 @@ class InactivePollStatusError(frappe.ValidationError): pass
 class Poll(WebsiteGenerator):
 	template = "templates/generators/poll.html"
 	condition_field = "published"
+	page_title_field = "title"
 	no_cache = 1
 	no_sitemap = 1
 	def get_context(self, context):
