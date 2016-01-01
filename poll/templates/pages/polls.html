@@ -1,6 +1,8 @@
+{% extends "templates/web.html" %}
+
 {% block header %}Polls{% endblock %}
 
-{% block content %}
+{% block page_content %}
 <!-- no-sidebar -->
 {% if std_header %}<p class="lead">{{ std_header }}</p>{% endif %}
 <div class="tabbable" style="max-width: 600px;"> <!-- Only required for left/right tabs -->

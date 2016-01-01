@@ -1,13 +1,15 @@
+{% extends "templates/web.html" %}
+
 {% block title %}{{ title }}{% endblock %}
 
-{% block content %}
+{% block page_content %}
 <!-- no-sidebar -->
 <div class="page-breadcrumbs" data-html-block="breadcrumbs">
 {%- if breadcrumbs is defined -%}{{ breadcrumbs }}{%- endif -%}
 </div>
 
 {% if (status == "Inactive") %}
-<div class="alert alert-info">
+<div class="text-muted">
 This Poll is Inactive. You cannot vote on this Poll
 </div>
 {% endif %}
@@ -29,7 +31,7 @@ This Poll is Inactive. You cannot vote on this Poll
 			</div>
 			{% if (status == "Active") %}
 			<div class="col-sm-2">
-				<button class="btn btn-info pull-right btn-vote" style="margin-top: -7px;"
+				<button class="btn btn-primary pull-right btn-vote" style="margin-top: -7px;"
 					data-option-name="{{ option.name }}">Vote</button>
 			</div>
 			{% endif %}
